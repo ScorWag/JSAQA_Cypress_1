@@ -1,0 +1,17 @@
+{
+  "name": "booksapp_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run -C cypress.config.js -b edge",
+    "test:headed": "cypress run -C cypress.config.js -b edge --headed",
+    "test:mobile": "cypress run -C cypress(mobile).config.js -b chrome",
+    "test:mobile_headed": "cypress run -C cypress(mobile).config.js -b chrome --headed"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^11.1.0"
+  }
+}
