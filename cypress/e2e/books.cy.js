@@ -47,7 +47,7 @@ it("Should not login with empty password", () => {
     .should("be.false");
 });
 
-describe.only("Test for favorites books", () => {
+describe("Test for favorites books", () => {
   before("Add books", () => {
     cy.visit("/");
     cy.login("test@test.com", "test");
