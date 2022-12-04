@@ -1,5 +1,3 @@
-// const { describe } = require("mocha");
-
 class testBook {
   constructor(title, description, authors) {
     this.title = title;
@@ -36,8 +34,6 @@ it("Should open the main page", () => {
 
 it("Should successfully login", () => {
   cy.login("test@test.com", "test");
-  cy.contains("Добро пожаловать test@test.com").should("be.visible");
-  cy.contains("Add new").should("have.class", "btn");
 });
 
 it("Should not login with empty password", () => {
@@ -56,7 +52,7 @@ describe("Test for favorites books", () => {
     // cy.addBook(testBook3);
     cy.contains("Log out").click();
   });
-  it("Should add book to favorites", () => {
+  it.only("Should add book to favorites", () => {
     cy.login("test@test.com", "test");
     cy.findButtonBookBy(testBook1.title).click();
     cy.contains("Favorites").click();

@@ -7,6 +7,8 @@ Cypress.Commands.add("login", (email, password) => {
     cy.get("#pass").type(password);
   }
   cy.contains("Submit").click();
+  cy.contains(`Добро пожаловать ${email}`).should("be.visible");
+  cy.contains("Add new").should("have.class", "btn");
 });
 
 Cypress.Commands.add("addBook", (testBook) => {
@@ -25,6 +27,7 @@ Cypress.Commands.add("addBook", (testBook) => {
 });
 
 Cypress.Commands.add("findButtonBookBy", (bookTitle) => {
+  cy.contains(bookTitle).should("be.visible");
   return cy
     .contains(".card-body", bookTitle)
     .siblings(".card-footer")
